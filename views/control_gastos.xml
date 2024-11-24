@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="control_gastos_tree_view">
+        <field name="name">control_gastos_tree_view</field>
+        <field name="model">control.gastos</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date_move"/>
+                <field name="type_move"/>
+                <field name="amount_move"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="control_gastos_form_view">
+        <field name="name">control_gastos_form_view</field>
+        <field name="model">control.gastos</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="date_move"/>
+                        <field name="type_move"/>
+                        <field name="amount_move"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="control_gastos_action" model="ir.actions.act_window">
+        <field name="name">Control gastos</field>
+        <field name="res_model">control.gastos</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>
