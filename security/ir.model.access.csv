@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_control_gastos,access_control_gastos,gastos_personales.model_control_gastos,base.group_user,1,1,1,0
+access_control_gastos_cuenta,access_control_gastos_cuenta,gastos_personales.model_control_gastos_cuenta,base.group_user,1,1,1,0
+access_control_gastos_concepto,access_control_gastos_concepto,gastos_personales.model_control_gastos_concepto,base.group_user,1,1,1,0

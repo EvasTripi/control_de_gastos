@@ -6,9 +6,12 @@
         <field name="model">control.gastos</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="name"/>
+                <field name="account"/>
                 <field name="date_move"/>
                 <field name="type_move"/>
-                <field name="amount_move"/>
+                <field name="state_move"/>
+                <field name="amount_move" sum="Total"/>
             </tree>
         </field>
     </record>
@@ -18,13 +21,26 @@
         <field name="model">control.gastos</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button class="btn btn-primary" type="object"
+                        name="aprobar_move" string="Aprobar"
+                        invisible="state_move=='Aprobado'"/>
+                    <field name="state_move" widget="statusbar"/>
+                </header>
                 <sheet>
                     <group>
+                        <field name="name"/>
+                        <field name="account"/>
                         <field name="date_move"/>
                         <field name="type_move"/>
                         <field name="amount_move"/>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
